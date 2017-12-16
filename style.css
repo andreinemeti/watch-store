@@ -1,0 +1,486 @@
+body {
+    font-family: 'Playfair Display', serif;
+}
+button:focus {
+    outline: none;
+}
+img {
+    margin: 0 auto;
+}
+#logo {
+    margin-top: -8px;
+    margin-right: 2px;
+    width: 35px;
+    float: left;
+}
+.carousel {
+    margin-top: 37px;
+}
+.left.carousel-control,
+.right.carousel-control,
+.icon-bar {
+    background: white;
+    color: black;
+}
+.navbar {
+    background: url("http://www.black-wallpaper.com/wp-content/uploads/2017/01/black_light_dark_figures_73356_3840x21601.jpg");
+    border-radius: 0;
+    border: none;
+    text-transform: uppercase;
+}
+.navbar-toggle.collapsed,
+button.navbar-toggle {
+    width: 10%;
+}
+a {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: grey;
+}
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: red;
+    color: white;
+}
+.carousel-caption {
+    color: black;
+    max-width: 200px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.carousel-indicators li {
+    background: black;
+}
+.carousel-indicators .active {
+    background: grey;
+}
+.carousel-control {
+    height: .01%;
+    margin: 15% auto;
+    background: red;
+}
+/******************** MENU **************************/
+/*Add slideDown animation */
+/*.dropdown .dropdown-menu {
+    transition: all 0.2s;
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 600px;
+    opacity: 1;
+    transition: all 0.9s;
+}*/
+
+ul.dropdown-menu {
+    width: 100%;
+    border: none;
+}
+.nav>li>a:focus,
+.nav>li>a:hover {
+    background-color: transparent;
+}
+.dropdown-menu li a {
+    background: white;
+    font-weight: bold;
+}
+.disabled {
+    pointer-events: none; //This makes it not clickable
+    opacity: 0.6; //This grays it out to look disabled
+}
+input[type=text] {
+    width: 150px;
+    text-align: center;
+    color: black;
+}
+/*http://www.villaorh-istria.com/wp-content/uploads/2016/05/Villa-Orh-Rovinj-background.jpg
+*/
+
+#week-offer {
+    background: url("http://stylecartel.com/wp-content/uploads/2017/05/Hublot-Classic-Fusion-Aerofusion-Chronograph-Red-The-Watch-Gallery-Special-Edition-4-e1494748579174.jpg") no-repeat;
+    background: #030214;
+    margin: -19px auto 0 auto;
+    padding-bottom: 50px;
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+#week-offer h1 {
+    font-size: 3.5rem;
+}
+#week-offer h1 span {
+    color: rgba(255, 50, 50, 0.9)
+}
+#week-offer h4 {
+    background: rgba(255, 0, 0, 0.6);
+    width: 55%;
+    margin: 0 auto 25px auto;
+    padding: 2px;
+}
+.percent {
+    font-size: 4rem;
+    color: rgba(255, 50, 50, 0.9);
+}
+#week-offer hr {
+    color: white;
+    width: 55%;
+    /*height:100vh;*/
+}
+#limited-stock {
+    background: red;
+    padding: 5px;
+    height: 40px;
+    line-height: 30px;
+    width: 100%;
+    color: white;
+}
+button {
+    width: 150px;
+    padding: 10px 0;
+    border: 0;
+}
+button:hover {
+    color: red;
+}
+#shop-now {
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+    margin-top: 10px;
+}
+#shop-now:hover {
+    background: white;
+    color: black;
+}
+#special-offer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    height: 40px;
+    line-height: 30px;
+    width: 100%;
+}
+.linetrough-price {
+    text-decoration: line-through;
+    color: red;
+}
+.caption {
+    background: white;
+    color: #9c0c0c;
+    border-bottom: 1px solid grey;
+    width: 43%;
+    margin: 0 auto;
+    padding: 1px 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+.red {
+    background: rgba(255, 0, 0, 0.6);
+}
+/*Shows info card when hovering on watches*/
+
+.info-hover {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 25px;
+}
+.info-hover .description {
+    top: 50%;
+    left: 1.25rem;
+    right: 1.25rem;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+.info-hover:hover .description {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 1;
+}
+.info-hover:after {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    transition: all 0.4s ease-out;
+    transform: rotateX(-90deg);
+}
+.info-hover a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+}
+.info-hover:hover:after,
+.info-hover.hover:after {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 0.9;
+}
+.description h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    width: 225px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+.fa-shopping-cart:hover {
+    color: red;
+}
+.fa-shopping-cart.my-order {
+    color: rgba(250, 0, 0, 0.8);
+    font-size: 3rem;
+    position: absolute;
+    right: 1.2rem;
+}
+.fa-shopping-cart.my-order:hover {
+    font-size: 3.15rem;
+    color: rgba(250, 0, 0, 1);
+}
+.search-btn {
+    background: #414c5c;
+    color: white;
+    width: 40px;
+}
+#for-women,
+#for-men {
+    background: rgb(151, 88, 147);
+    padding: 5px;
+    height: 40px;
+    line-height: 30px;
+    width: 100%;
+    color: white;
+}
+#for-men {
+    background: black;
+}
+.newsletter-form p {
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+}
+#newsletter {
+    padding: 5px;
+    height: 34.5px;
+    border: 1px solid #c3cbd5;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.social {
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.social a {
+    color: black;
+}
+.social a:hover {
+    color: red;
+}
+#submitButton {
+    background: rgb(65, 76, 92);
+    color: white;
+    padding: 5px;
+    width: 90px;
+    height: 35px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+#submitButton:hover {
+    background: white;
+    color: black;
+    border: 1px solid rgb(65, 76, 92);
+}
+.footer {
+    border-top: 1px solid black;
+    margin-bottom: 20px;
+}
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: red;
+}
+#goToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 10px;
+    z-index: 3;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+#myBtn:hover {
+    background-color: #555;
+}
+.fa.fa-angle-double-up {
+    font-size: 25px;
+}
+.body-blur {
+    width: 100%;
+    height: 100vh;
+    /*with device height*/
+    
+    position: fixed;
+    background: rgba(23, 21, 21, 0.7);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+    display: none;
+}
+#description-box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    max-height: 400px;
+    z-index: 15;
+    /*to cover carousel li navigation*/
+    /*position:absolute;am facut-o cu jQuery*/
+    
+    display: none;
+    text-align: center;
+    border: 1px solid black;
+    background: white;
+    width: 40%;
+    padding: 10px;
+}
+#description-box .description-box-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto 5% auto;
+    outline: 0;
+    border: 1px solid black;
+}
+#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 30px;
+    line-height: 15px;
+    background: transparent;
+    font-size: 22px;
+}
+input[type="submit"]button:focus,
+button:active,
+button:active:focus {
+    outline: 0;
+}
+#description-box .add-to-cart {
+    background: black;
+    color: white;
+    border: 1px solid black;
+    text-transform: uppercase;
+}
+#description-box .add-to-cart:hover {
+    background: white;
+    border: 1px solid black;
+    color: black;
+}
+/*Media queries*/
+
+@media all and (max-width: 991px) {
+    img {
+        width: 40%;
+    }
+    .col-md-3 {
+        margin-bottom: 20px;
+    }
+}
+@media all and (max-width: 670px) {
+    #week-offer {
+        height: 100%;
+        /*old browsers*/
+        
+        height: 100vh;
+    }
+    #week-offer h3 {
+        margin-top: 20%;
+    }
+    #brand {
+        margin-top: 25%;
+    }
+}
+@media all and (max-width: 767px) {
+    img {
+        width: 60%;
+    }
+    #description-box {
+        min-width: 200px;
+    }
+    #week-offer img {
+        width: 45%;
+    }
+    button.search-btn {
+        position: relative;
+        right: -16rem;
+        top: -3.4rem;
+    }
+    .carousel-control {
+        margin: 25% auto;
+    }
+    #week-offer h1 {
+        font-size: 3rem;
+    }
+    #general-offer h2 {
+        font-size: 2.5rem;
+    }
+    #week-offer h3 {
+        font-size: 1.5rem;
+    }
+    .percent {
+        font-size: 2.5rem;
+    }
+    .remove-from-cart {
+        color: red;
+    }
+    .col-md-3 button {
+        margin: 2% 0 2% 0;
+    }
+}
+/*ANIMATIONS*/
+
+.floating {
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    margin-top: 5px;
+}
+@keyframes floating {
+    from {
+        transform: translate(0, 155px);
+    }
+    to {
+        transform: translate(0, 0px);
+    }
+}
