@@ -28,8 +28,14 @@ img {
     border: none;
     text-transform: uppercase;
 }
+
+#bs-example-navbar-collapse-1 {
+        background:black;
+}
+
 .navbar-toggle.collapsed,
 button.navbar-toggle {
+
     width: 10%;
 }
 a {
