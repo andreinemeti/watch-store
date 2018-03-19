@@ -103,9 +103,31 @@
                   <li class="red"><a href="#special-offer">Special offers</a></li>
                </ul>
                <form class="navbar-form navbar-right">
-                  <a href="#"><i class="fa fa-shopping-cart my-order" aria-hidden="true" onclick="alert('I did not add functionality to this button yet')"></i></a>
+                  <a href="#"><i class="fa fa-shopping-cart my-order" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i></a>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">My shopping cart</h4>
+      </div>
+      <div class="modal-body">
+        <p class="productsNumber">You have no products in your shopping cart.</p>
+        <p class="products"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
                   <div class="form-group">
-                     <input type="text" class="form-control" placeholder="Search by brand">
+                     <input type="text" class="form-control" id="search" placeholder="Search by brand">
                      <button type="submit" class="btn btn-default search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                   </div>
                </form>
@@ -139,7 +161,7 @@
          <div class="container">
             <div class="carousel-inner" role="listbox">
                <div class="item active">
-                  <img src="img/A001.jpg" alt="hublot watch">
+                  <img class="img img-responsive" src="img/A001.jpg" alt="hublot watch">
                   <div class="carousel-caption">
                      <h2>HUBLOT</h2>
                      <h4>Starting from 299$</h4>
@@ -199,12 +221,12 @@
          </div>
          <br/><br/>
          <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="caption">
                   <h4>SAVE 100 $! </h4>
                </div>
                <div class="info-hover">
-                  <img src="img/A005.jpg" alt="cartier watch">
+                  <img class="img img-responsive" src="img/A005.jpg" alt="cartier watch">
                   <div class="description">
                      <h4>CARTIER</h4>
                      <h4><span class="linetrough-price">399 $</span> 299 $</h4>
@@ -213,14 +235,14 @@
                   </div>
                   <a class="view" id="A005" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A005 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="caption">
                   <h4>SAVE 100 $! </h4>
                </div>
                <div class="info-hover">
-                  <img src="img/A006.jpg" alt="cartier watch">
+                  <img class="img img-responsive" src="img/A006.jpg" alt="cartier watch">
                   <div class="description">
                      <h4>CARTIER</h4>
                      <h4><span class="linetrough-price">499 $</span> 399 $</h4>
@@ -229,14 +251,14 @@
                   </div>
                   <a class="view" id="A006" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A006 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="caption">
                   <h4>SAVE 100 $! </h4>
                </div>
                <div class="info-hover">
-                  <img src="img/A007.jpg" alt="cartier watch">
+                  <img class="img img-responsive" src="img/A007.jpg" alt="cartier watch">
                   <div class="description">
                      <h4>CARTIER</h4>
                      <h4><span class="linetrough-price">549 $</span> 449 $</h4>
@@ -245,15 +267,15 @@
                   </div>
                   <a class="view" id="A007" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A007 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="caption">
                   <h4>SAVE 200 $! </h4>
                </div>
                <div class="info-hover">
                   <!-- Start hover area -->
-                  <img src="img/A008.jpg" alt="cartier watch">
+                  <img class="img img-responsive" src="img/A008.jpg" alt="cartier watch">
                   <div class="description">
                      <h4>CARTIER</h4>
                      <h4><span class="linetrough-price">899 $</span> 699 $</h4>
@@ -263,7 +285,7 @@
                   <a class="view" id="A008" href="#sadsadsada"></a>
                </div>
                <!-- End hover area -->
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A008 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
             <!-- End col-md-3  -->
          </div>
@@ -281,9 +303,9 @@
          </div>
          <br/><br/>
          <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
-                  <img src="img/A009.jpg" alt="rolex watch">
+                  <img class="img img-responsive" src="img/A009.jpg" alt="rolex watch">
                   <div class="description">
                      <h4>ROLEX</h4>
                      <h4>599 $</h4>
@@ -292,11 +314,11 @@
                   </div>
                   <a class="view" id="A009" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A009 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
-                  <img src="img/A010.jpg" alt="rolex watch">
+                  <img class="img img-responsive" src="img/A010.jpg" alt="rolex watch">
                   <div class="description">
                      <h4>ROLEX</h4>
                      <h4>699 $</h4>
@@ -305,11 +327,11 @@
                   </div>
                   <a class="view" id="A010" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A010 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
-                  <img src="img/A011.jpg" alt="hublot watch">
+                  <img class="img img-responsive" src="img/A011.jpg" alt="hublot watch">
                   <div class="description">
                      <h4>HUBLOT</h4>
                      <h4>349 $</h4>
@@ -318,12 +340,12 @@
                   </div>
                   <a class="view" id="A011" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A011 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
                   <!-- Start hover area -->
-                  <img src="img/A012.jpg" alt="tissot watch">
+                  <img class="img img-responsive" src="img/A012.jpg" alt="tissot watch">
                   <div class="description">
                      <h4>TISSOT</h4>
                      <h4>599 $</h4>
@@ -333,7 +355,7 @@
                   <a class="view" id="A012" href="#sadsadsada"></a>
                </div>
                <!-- End hover area -->
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A012 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
             <!-- End col-md-3  -->
          </div>
@@ -351,9 +373,9 @@
          </div>
          <br/><br/>
          <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
-                  <img src="img/A013.jpg" alt="paul hewitt watch">
+                  <img class="img img-responsive" src="img/A013.jpg" alt="paul hewitt watch">
                   <div class="description">
                      <h4>PAUL HEWITT</h4>
                      <h4>299 $</h4>
@@ -362,11 +384,11 @@
                   </div>
                   <a class="view" id="A013" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A013 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
-                  <img src="img/A014.jpg" alt="paul hewitt watch">
+                  <img class="img img-responsive" src="img/A014.jpg" alt="paul hewitt watch">
                   <div class="description">
                      <h4>JBW</h4>
                      <h4>399 $</h4>
@@ -375,11 +397,11 @@
                   </div>
                   <a class="view" id="A014" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A014 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
-                  <img src="img/A015.jpg" alt="jbw watch">
+                  <img class="img img-responsive" src="img/A015.jpg" alt="jbw watch">
                   <div class="description">
                      <h4>JBW</h4>
                      <h4>349 $</h4>
@@ -388,12 +410,12 @@
                   </div>
                   <a class="view" id="A015" href="#sadsadsada"></a>
                </div>
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A015 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 col-sm-6 text-center">
                <div class="info-hover">
                   <!-- Start hover area -->
-                  <img src="img/A016.jpg" alt="cartier watch">
+                  <img class="img img-responsive" src="img/A016.jpg" alt="cartier watch">
                   <div class="description">
                      <h4>CARTIER</h4>
                      <h4>599 $</h4>
@@ -403,11 +425,12 @@
                   <a class="view" id="A016" href="#sadsadsada"></a>
                </div>
                <!-- End hover area -->
-               <button class="add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+               <button class="A016 add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </div>
             <!-- End col-md-3  -->
          </div>
          <!-- End row  -->
+
          <br/><br/><br/><br/>
          <div class="row">
             <div class="col-md-8 text-center newsletter-form">
@@ -474,8 +497,11 @@
       <!-- END CONTAINER FLUID  -->
       <button id="goToTopBtn" title="Go to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
       <div class="body-blur"></div>
-      <div id="description-box">
+      <div class="description-box">
          <!-- START DESCRIPTION BOX -->
+      </div>
+      <div class="notification">
+        
       </div>
    </body>
 </html>

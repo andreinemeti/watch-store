@@ -72,20 +72,7 @@ a:hover {
     background: red;
 }
 /******************** MENU **************************/
-/*Add slideDown animation */
-/*.dropdown .dropdown-menu {
-    transition: all 0.2s;
-    max-height: 0;
-    display: block;
-    overflow: hidden;
-    opacity: 0;
-}
 
-.dropdown.open .dropdown-menu {
-    max-height: 600px;
-    opacity: 1;
-    transition: all 0.9s;
-}*/
 
 ul.dropdown-menu {
     width: 100%;
@@ -100,8 +87,8 @@ ul.dropdown-menu {
     font-weight: bold;
 }
 .disabled {
-    pointer-events: none; //This makes it not clickable
-    opacity: 0.6; //This grays it out to look disabled
+    pointer-events: none; 
+    opacity: 0.6; 
 }
 input[type=text] {
     width: 150px;
@@ -155,7 +142,9 @@ button {
     width: 150px;
     padding: 10px 0;
     border: 0;
+    transition:.3s all;
 }
+
 button:hover {
     color: red;
 }
@@ -193,12 +182,18 @@ button:hover {
 .red {
     background: rgba(255, 0, 0, 0.6);
 }
-/*Shows info card when hovering on watches*/
 
+/*Shows info card when hovering on watches*/
 .info-hover {
     position: relative;
     z-index: 1;
     margin-bottom: 25px;
+}
+
+@media screen and (min-width:767px) and (max-width:991px) {
+    .info-hover {
+     margin-bottom: 55px;
+}
 }
 .info-hover .description {
     top: 50%;
@@ -359,26 +354,35 @@ button:hover {
     z-index: 2;
     display: none;
 }
-#description-box {
+
+.description-box, .notification {
+    display: none;
     position: fixed;
+    text-align: center;
+    border: 1px solid #f1f1f1;
+    background: white;
+    padding: 10px;
+    z-index: 15;
+
+}
+.description-box {
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    max-height: 400px;
-    z-index: 15;
-    /*to cover carousel li navigation*/
-    /*position:absolute;am facut-o cu jQuery*/
-    
-    display: none;
-    text-align: center;
-    border: 1px solid black;
-    background: white;
+    max-height: 400px;  
     width: 40%;
-    padding: 10px;
 }
-#description-box .description-box-button {
+
+.notification { 
+    width:200px;
+    height:100px;
+    top:15px;
+    right:15px;  
+}
+
+.description-box .remove-from-cart, .description-box .add-to-cart {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -386,8 +390,10 @@ button:hover {
     margin: 0 auto 5% auto;
     outline: 0;
     border: 1px solid black;
-}
-#close {
+    transition:.3s all;
+ }
+
+.close {
     position: absolute;
     top: 0;
     right: 0;
@@ -402,13 +408,13 @@ button:active,
 button:active:focus {
     outline: 0;
 }
-#description-box .add-to-cart {
+.description-box .add-to-cart {
     background: black;
     color: white;
     border: 1px solid black;
     text-transform: uppercase;
 }
-#description-box .add-to-cart:hover {
+.description-box .add-to-cart:hover {
     background: white;
     border: 1px solid black;
     color: black;
@@ -441,7 +447,7 @@ button:active:focus {
     img {
         width: 60%;
     }
-    #description-box {
+    .description-box {
         min-width: 200px;
     }
     #week-offer img {

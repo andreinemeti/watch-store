@@ -9,15 +9,15 @@ $(document).ready(function() {
         this.showDescription = function() {
             var info = "";
             info += '<div class="info">';
-            info += '<h3 id="brand">' + 'Brand name: ' + this.brand + '</h3>';
-            info += '<h4 id="full-name">' + 'Model: ' + this.model + '</h4>';
-            info += '<h5 id="item-id">' + 'ID: ' + this.id + '</h5>';
-            info += '<p id="short-description">' + 'Short description: ' + this.description + '</p>';
-            info += '<h4 id="price">Price ' + this.price + '</h4>';
-            info += '<button class="add-to-cart description-box-button">ADD TO CART</button>';
-            info += '<button id="close"><i class="fa fa-times" aria-hidden="true"></i></button>';
+            info += '<h3 class="brand">' + 'Brand name: ' + this.brand + '</h3>';
+            info += '<h4 class="full-name">' + 'Model: ' + this.model + '</h4>';
+            info += '<h5 class="item-id">' + 'ID: ' + this.id + '</h5>';
+            info += '<p class="short-description">' + 'Short description: ' + this.description + '</p>';
+            info += '<h4 class="price">Price ' + this.price + '</h4>';
+            info += '<button class="' + this.id + ' add-to-cart">ADD TO CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>';
+            info += '<button class="close"><i class="fa fa-times" aria-hidden="true"></i></button>';
             info += '</div>';
-            $(info).appendTo("#description-box");
+            $(info).appendTo(".description-box");
         };
     }
 
@@ -82,101 +82,126 @@ $(document).ready(function() {
         "349 $");
 
     var product16 = new product("A016", "CARTIER", 'TANK ANGLAISE MEDIUM',
-        "Proin porta dui a consectetur vulputate. Nulla semper commodo eleifend.",
+        "Manufacture mechanical movement with automatic winding caliber 1904 MC.",
         "599 $");
 
 
     $(".view").click(function() {
-        $("#description-box").empty();
+        $(".description-box").empty();
         $(".body-blur").show();
-        $("#description-box").show("easing");
+        $(".description-box").show("easing");
         switch ($(this).attr("id")) {
             case 'A001':
-                $("#description-box").text(product1.showDescription());
+                $(".description-box").text(product1.showDescription());
                 break;
             case 'A002':
-                $("#description-box").text(product2.showDescription());
+                $(".description-box").text(product2.showDescription());
                 break;
             case 'A003':
-                $("#description-box").text(product3.showDescription());
+                $(".description-box").text(product3.showDescription());
                 break;
             case 'A004':
-                $("#description-box").text(product4.showDescription());
+                $(".description-box").text(product4.showDescription());
                 break;
             case 'A005':
-                $("#description-box").text(product5.showDescription());
+                $(".description-box").text(product5.showDescription());
                 break;
             case 'A006':
-                $("#description-box").text(product6.showDescription());
+                $(".description-box").text(product6.showDescription());
                 break;
             case 'A007':
-                $("#description-box").text(product7.showDescription());
+                $(".description-box").text(product7.showDescription());
                 break;
             case 'A008':
-                $("#description-box").text(product8.showDescription());
+                $(".description-box").text(product8.showDescription());
                 break;
             case 'A009':
-                $("#description-box").text(product9.showDescription());
+                $(".description-box").text(product9.showDescription());
                 break;
             case 'A010':
-                $("#description-box").text(product10.showDescription());
+                $(".description-box").text(product10.showDescription());
                 break;
             case 'A011':
-                $("#description-box").text(product11.showDescription());
+                $(".description-box").text(product11.showDescription());
                 break;
             case 'A012':
-                $("#description-box").text(product12.showDescription());
+                $(".description-box").text(product12.showDescription());
                 break;
             case 'A013':
-                $("#description-box").text(product13.showDescription());
+                $(".description-box").text(product13.showDescription());
                 break;
             case 'A014':
-                $("#description-box").text(product14.showDescription());
+                $(".description-box").text(product14.showDescription());
                 break;
             case 'A015':
-                $("#description-box").text(product15.showDescription());
+                $(".description-box").text(product15.showDescription());
                 break;
             case 'A016':
-                $("#description-box").text(product16.showDescription());
+                $(".description-box").text(product16.showDescription());
                 break;
             default:
-                $("#description-box").text('not found');
+                $(".description-box").text('not found');
         }
     });
 
+let showNotification = () => {
+notificationBox.delay(300).fadeIn("easing").delay(2500).fadeOut("easing");
+$(".body-blur").delay(900).show().delay(3000).fadeOut();
+}
     // hide description when clicking outside the description box
     $(".body-blur").click(function() {
         $(this).hide();
-        $("#description-box").hide("easing");
-    });
-    $("body").on("click", "#close", function() {
-        $("#description-box").hide("easing");
-        $(".body-blur").hide("easing");
+        $(".description-box, .notification").hide("easing");
     });
 
-    //change text of the buttons created in js
-    $("body").on("click", ".description-box-button", function() {
-        if ($(this).text() == 'REMOVE FROM CART') {
-            $(this).text('ADD TO CART');
-        } else {
-            $(this).text('REMOVE FROM CART');
-        }
-        $(this).toggleClass('add-to-cart');
-        $(this).toggleClass('remove-from-cart');
+    $("body").on("click", ".close", function() {
+        $(".description-box, .body-blur").fadeOut("easing");
     });
 
+//add to cart function
+let shoppingCart = [];
+let notificationBox = $('.notification');
 
-    $(".add-to-cart").click(function() {
-        var addIcon = '<i class="fa fa-shopping-cart" aria-hidden="true"></i>';
-        var rmvIcon = '<i class="fa fa-shopping-cart" aria-hidden="true"></i>';
+
+    $('body').on('click', ".add-to-cart, .remove-from-cart", function(){
+    	let product = $(this).attr('class').substring(0,4); //keeping only the class that shows the product ID (eg: A001)
+    	let itemtoRemove = product;
+
+        const addIcon = '<i class="fa fa-shopping-cart" aria-hidden="true"></i>';
+
         if ($(this).html() == 'REMOVE FROM CART ') {
+        	//remove product from cart
             $(this).html('ADD TO CART ' + addIcon);
+            shoppingCart.splice($.inArray(product, shoppingCart),1); //removes only the matched item in an array
+
+			$('.products h5:last-child').remove();
+			notificationBox.html(product + ' removed from  cart. ' + 'You have ' + shoppingCart.length + ' products left in your cart.');
+
+			showNotification();
+			console.log("");
+        	console.log(product + ' removed from  cart. ' + 'You have ' + shoppingCart.length + ' products in your cart.');
+        	console.log(shoppingCart);
+
         } else {
+        	//add product to cart 
+        	shoppingCart.push(product);
+        	$('.products').append('<h5>' + product + '</h5>');
+        	notificationBox.html(product + ' added to cart. ' + 'You have ' + shoppingCart.length + ' products in your cart.');
+        	showNotification();
+
+        	console.log("");
+        	console.log(product + ' added to cart. ' + 'The shopping cart length is ' + shoppingCart.length);
+        	console.log(shoppingCart);
             $(this).html('REMOVE FROM CART ');
         }
         $(this).toggleClass('add-to-cart');
         $(this).toggleClass('remove-from-cart');
+
+     //shopping cart 
+	$('.modal-body .productsNumber').text('You have ' + shoppingCart.length + ' products in your shopping cart.');
     });
+
+
     // Add slideDown animation to Bootstrap menu dropdown when expanding.
     $('.dropdown').on('show.bs.dropdown', function() {
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
@@ -214,11 +239,12 @@ $(document).ready(function() {
             $("#goToTopBtn").hide();
         }
     };
-    // Centers #description-box or any element with .center();
-    jQuery.fn.center = function() {
-        this.css("position", "absolute");
-        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
-        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
-        return this;
-    }
+    // Centers .description-box or any element with .center();
+    // jQuery.fn.center = function() {
+    //     this.css("position", "absolute");
+    //     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+    //     this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+    //     return this;
+    // }
+
 });
