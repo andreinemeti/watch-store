@@ -233,7 +233,7 @@ let notificationBox = $('.notification');
     });
     // When the user scrolls down, #myBtn shows
     window.onscroll = function() {
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 300){ 
             $("#goToTopBtn").show();
         } else {
             $("#goToTopBtn").hide();
